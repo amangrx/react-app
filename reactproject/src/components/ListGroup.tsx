@@ -1,16 +1,25 @@
+import { MouseEvent } from "react";
 
 function ListGroup() {
+  let items = ["Pokhara", "Kathmandu", "Bhaktapur", "Lalitpur", "Biratnagar"];
+  const handleClick = (event: MouseEvent) => console.log(event);
+
   return (
     //<> is a shorthand for <React.Fragment> which is used to group elements without adding extra nodes to the DOM.
     <>
-        <h1>List Group</h1>
-        <ul className="list-group">
-          <li className="list-group-item">An item</li>
-          <li className="list-group-item">A second item</li>
-          <li className="list-group-item">A third item</li>
-          <li className="list-group-item">A fourth item</li>
-          <li className="list-group-item">And a fifth one</li>
-        </ul>
+      <h1>List Group</h1>
+      {items.length === 0 && <p>No items to show</p>}
+      <ul className="list-group">
+        {items.map((item) => (
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={handleClick}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
