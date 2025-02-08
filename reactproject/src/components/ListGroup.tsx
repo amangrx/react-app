@@ -1,8 +1,8 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 
 function ListGroup() {
   let items = ["Pokhara", "Kathmandu", "Bhaktapur", "Lalitpur", "Biratnagar"];
-  const handleClick = (event: MouseEvent) => console.log(event);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     //<> is a shorthand for <React.Fragment> which is used to group elements without adding extra nodes to the DOM.
@@ -10,11 +10,11 @@ function ListGroup() {
       <h1>List Group</h1>
       {items.length === 0 && <p>No items to show</p>}
       <ul className="list-group">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={selectedIndex === index ? "list-group-item active" : "list-group-item"}
             key={item}
-            onClick={handleClick}
+            onClick={() => {setSelectedIndex(index); }}
           >
             {item}
           </li>
