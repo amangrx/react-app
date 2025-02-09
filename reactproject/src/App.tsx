@@ -1,16 +1,22 @@
-import ListGroup from "./components/ListGroup";
+// import ListGroup from "./components/ListGroup";
+
+import Alert from "./components/Alert";
+
   
 function App() {
-  let items = ["Pokhara", "Kathmandu", "Bhaktapur", "Lalitpur", "Biratnagar"];
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  }
+  // let items = ["Pokhara", "Kathmandu", "Bhaktapur", "Lalitpur", "Biratnagar"];
+  // const handleSelectItem = (item: string) => {
+  //   console.log(item);
+  // }
 
   return (
     <div>
-      <ListGroup items={items} heading="Name of Cities" onSelectItem={handleSelectItem}/>
+      <Alert>
+        <h1>Hello World</h1>
+      </Alert>
+      {/* <ListGroup items={items} heading="Name of Cities" onSelectItem={handleSelectItem}/> */}
     </div>
   );
 }
 
-export default App;
+export default App; 
